@@ -1,18 +1,22 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app=Flask(__name__)
 
 @app.route("/")
 def index():
-    return "hello....."
+    return render_template("index.html")
+    
 
 @app.route("/home")
 def home():
-    return "my home page"
+    return render_template("home.html")
 
 @app.route("/contact")
 def contact():
     return "my contact"
 
+
+
+
 if(__name__=="__main__"):
-    app.run()
+    app.run(debug=True)
